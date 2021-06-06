@@ -1,0 +1,26 @@
+{
+  "name": "cubik",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p3ntest-clients/cubik.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/p3ntest-clients/cubik/issues"
+  },
+  "homepage": "https://github.com/p3ntest-clients/cubik#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "quick.db": "^7.1.3"
+  }
+}
