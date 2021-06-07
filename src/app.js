@@ -1,6 +1,9 @@
 const Discord = require("discord.js");
 const express = require("express");
-const db = require("quick.db");
+const fs = require("fs");
+const path = require("path")
+if (!fs.existsSync(path.join(__dirname, "/db.json"))) fs.writeFileSync(path.join(__dirname, "/db.json"), "{}");
+const db = require("./db.json");
 const fetch = require("node-fetch");
 
 const client = new Discord.Client();
@@ -32,7 +35,9 @@ client.on("message", (msg) => {
       const route = config.commands[command];
       const user_id = msg.content.split(" ")[1];
 
-      db.push(user_id, route.id);
+      if (!db[user_id]) db[user_id] = [];
+      db[user_id].push(route.id);
+      fs.writeFileSync(path.join(__dirname, "/db.json"), JSON.stringify(db));
 
       msg.react("👍");
     }
@@ -73,7 +78,7 @@ app.get("/auth", async (req, res) => {
 
   // console.log(user_id);
 
-  const routeIds = db.get(user_id);
+  const routeIds = db[user_id];
 
   let roles = [];
 
