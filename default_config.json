@@ -1,0 +1,21 @@
+{
+    "discord_token": "",
+    "discord_id": "",
+    "discord_secret": "",
+    "doj_server": "",
+    "admins": [
+        ""
+    ],
+    "commands": {
+        "1!whishlist": {
+            "id": "dontchangethis1",
+            "server": "",
+            "role": ""
+        },
+        "2!whishlist": {
+            "id": "dontchangethis2",
+            "server": "",
+            "role": ""
+        }
+    }
+}
